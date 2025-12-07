@@ -5,21 +5,32 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My Portfolio</title>
     <style>
-        body { font-family: Arial, sans-serif; margin: 20px; }
-        .project { margin-bottom: 20px; }
-        h1 { color: #333; }
+        body { font-family: Arial, sans-serif; margin: 0; padding: 20px; background-color: #f4f4f4; }
+        .container { max-width: 900px; margin: auto; }
+        .project { background: white; border-radius: 8px; padding: 15px; margin-bottom: 20px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); }
+        .project h2 { color: #2c3e50; }
+        .project p { color: #555; }
+        .project img { max-width: 100%; border-radius: 4px; margin-top: 10px; }
+        a { color: #3498db; text-decoration: none; }
     </style>
 </head>
 <body>
-    <h1>Welcome to My Portfolio</h1>
-    <div class="project">
-        <h2>Autonomous Affiliate Marketing Agent</h2>
-        <p>A description of your project goes here. Link to the <a href="YOUR_GITHUB_REPO_URL">GitHub repository</a>.</p>
+    <div class="container">
+        <h1>Welcome to My Portfolio</h1>
+
+        <div class="project">
+            <h2>Autonomous Affiliate Marketing Agent</h2>
+            <p>This project automates affiliate marketing tasks using AI. <a href="YOUR_GITHUB_REPO_URL">View on GitHub</a>.</p>
+            <img src="LINK_TO_AN_IMAGE" alt="Affiliate Agent Project">
+        </div>
+
+        <div class="project">
+            <h2>Social Games Web App</h2>
+            <p>A web app for playing social games online. <a href="YOUR_GITHUB_REPO_URL">View on GitHub</a>.</p>
+            <img src="LINK_TO_AN_IMAGE" alt="Social Games Project">
+        </div>
+
+        <!-- Add more project sections in the same way -->
     </div>
-    <div class="project">
-        <h2>Social Games Web App</h2>
-        <p>A description of your social games project. Link to the <a href="YOUR_GITHUB_REPO_URL">GitHub repository</a>.</p>
-    </div>
-    <!-- Add more projects in the same way -->
 </body>
 </html>
