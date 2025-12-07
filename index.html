@@ -1,36 +1,312 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Portfolio</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>My Developer Portfolio</title>
+
+    <!-- Optional Google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
     <style>
-        body { font-family: Arial, sans-serif; margin: 0; padding: 20px; background-color: #f4f4f4; }
-        .container { max-width: 900px; margin: auto; }
-        .project { background: white; border-radius: 8px; padding: 15px; margin-bottom: 20px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); }
-        .project h2 { color: #2c3e50; }
-        .project p { color: #555; }
-        .project img { max-width: 100%; border-radius: 4px; margin-top: 10px; }
-        a { color: #3498db; text-decoration: none; }
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: "Poppins", system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+            background: linear-gradient(135deg, #0f172a, #1e293b);
+            color: #e5e7eb;
+            padding: 20px;
+        }
+
+        .page {
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        header h1 {
+            font-size: 2.5rem;
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+
+        header p {
+            font-size: 1rem;
+            color: #9ca3af;
+        }
+
+        .tagline {
+            margin-top: 8px;
+            font-size: 0.95rem;
+            color: #a5b4fc;
+        }
+
+        .projects-section-title {
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+            font-weight: 600;
+        }
+
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 20px;
+        }
+
+        .project-card {
+            background: rgba(15, 23, 42, 0.95);
+            border-radius: 16px;
+            padding: 18px 18px 20px;
+            box-shadow: 0 18px 40px rgba(15, 23, 42, 0.6);
+            border: 1px solid rgba(148, 163, 184, 0.2);
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+        }
+
+        .project-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 22px 50px rgba(59, 130, 246, 0.35);
+            border-color: rgba(96, 165, 250, 0.7);
+        }
+
+        .project-image {
+            width: 100%;
+            height: 160px;
+            border-radius: 12px;
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            margin-bottom: 5px;
+        }
+
+        .project-title {
+            font-size: 1.1rem;
+            font-weight: 600;
+        }
+
+        .project-desc {
+            font-size: 0.9rem;
+            color: #cbd5f5;
+        }
+
+        .tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 6px;
+            margin-top: 4px;
+        }
+
+        .tag {
+            font-size: 0.75rem;
+            padding: 4px 8px;
+            border-radius: 999px;
+            background: rgba(55, 65, 81, 0.9);
+            color: #e5e7eb;
+        }
+
+        .buttons {
+            display: flex;
+            gap: 10px;
+            margin-top: 10px;
+        }
+
+        .btn {
+            flex: 1;
+            text-align: center;
+            padding: 8px 10px;
+            border-radius: 999px;
+            font-size: 0.85rem;
+            text-decoration: none;
+            border: 1px solid transparent;
+            cursor: pointer;
+            transition: background 0.2s ease, border-color 0.2s ease, transform 0.15s ease;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, #3b82f6, #6366f1);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-1px);
+            border-color: #bfdbfe;
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: #e5e7eb;
+            border-color: rgba(148, 163, 184, 0.7);
+        }
+
+        .btn-secondary:hover {
+            background: rgba(30, 64, 175, 0.4);
+        }
+
+        footer {
+            margin-top: 40px;
+            text-align: center;
+            font-size: 0.85rem;
+            color: #9ca3af;
+        }
+
+        footer a {
+            color: #93c5fd;
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+
+        @media (max-width: 600px) {
+            header h1 {
+                font-size: 2rem;
+            }
+        }
     </style>
 </head>
 <body>
-    <div class="container">
-        <h1>Welcome to My Portfolio</h1>
+<div class="page">
+    <header>
+        <h1>My Developer Portfolio</h1>
+        <p>Software engineer · Automation · Trading · Web & Mobile</p>
+        <p class="tagline">A collection of projects in affiliate marketing, social apps, trading bots, and Android apps.</p>
+    </header>
 
-        <div class="project">
-            <h2>Autonomous Affiliate Marketing Agent</h2>
-            <p>This project automates affiliate marketing tasks using AI. <a href="YOUR_GITHUB_REPO_URL">View on GitHub</a>.</p>
-            <img src="LINK_TO_AN_IMAGE" alt="Affiliate Agent Project">
+    <main>
+        <h2 class="projects-section-title">Featured Projects</h2>
+
+        <div class="projects-grid">
+
+            <!-- 1. Autonomous Affiliate Marketing Agent -->
+            <article class="project-card">
+                <div class="project-image"
+                     style="background-image: url('https://via.placeholder.com/600x400?text=Affiliate+Agent');">
+                </div>
+                <div class="project-title">Autonomous Affiliate Marketing Agent</div>
+                <div class="project-desc">
+                    AI-powered agent that researches products, generates content, and posts automatically across
+                    multiple platforms to drive affiliate revenue with minimal manual work.
+                </div>
+                <div class="tags">
+                    <span class="tag">Python</span>
+                    <span class="tag">Automation</span>
+                    <span class="tag">APIs</span>
+                    <span class="tag">Affiliate Marketing</span>
+                </div>
+                <div class="buttons">
+                    <a class="btn btn-primary" href="YOUR_AFFILIATE_AGENT_REPO_LINK" target="_blank">
+                        View on GitHub
+                    </a>
+                    <a class="btn btn-secondary" href="#" target="_blank">
+                        Live Demo (optional)
+                    </a>
+                </div>
+            </article>
+
+            <!-- 2. Social Games Web App -->
+            <article class="project-card">
+                <div class="project-image"
+                     style="background-image: url('https://via.placeholder.com/600x400?text=Social+Games');">
+                </div>
+                <div class="project-title">Social Games Web App</div>
+                <div class="project-desc">
+                    Multiplayer social games platform where friends can play casual games together in real time
+                    with chat and matchmaking.
+                </div>
+                <div class="tags">
+                    <span class="tag">JavaScript</span>
+                    <span class="tag">Node.js</span>
+                    <span class="tag">WebSockets</span>
+                    <span class="tag">React (if used)</span>
+                </div>
+                <div class="buttons">
+                    <a class="btn btn-primary" href="YOUR_SOCIAL_GAMES_REPO_LINK" target="_blank">
+                        View on GitHub
+                    </a>
+                    <a class="btn btn-secondary" href="#" target="_blank">
+                        Live Demo (optional)
+                    </a>
+                </div>
+            </article>
+
+            <!-- 3. Trading Bot -->
+            <article class="project-card">
+                <div class="project-image"
+                     style="background-image: url('https://via.placeholder.com/600x400?text=Trading+Bot');">
+                </div>
+                <div class="project-title">Stocks · Crypto · Forex Trading Bot</div>
+                <div class="project-desc">
+                    A multi-asset trading bot that automates strategies for stocks, crypto, and forex using
+                    signals, risk management rules, and broker integrations.
+                </div>
+                <div class="tags">
+                    <span class="tag">Python</span>
+                    <span class="tag">Trading Algorithms</span>
+                    <span class="tag">APIs</span>
+                    <span class="tag">Automation</span>
+                </div>
+                <div class="buttons">
+                    <a class="btn btn-primary" href="YOUR_TRADING_BOT_REPO_LINK" target="_blank">
+                        View on GitHub
+                    </a>
+                    <a class="btn btn-secondary" href="#" target="_blank">
+                        Strategy Docs (optional)
+                    </a>
+                </div>
+            </article>
+
+            <!-- 4. Mobile Apps -->
+            <article class="project-card">
+                <div class="project-image"
+                     style="background-image: url('https://via.placeholder.com/600x400?text=Mobile+Apps');">
+                </div>
+                <div class="project-title">Android Mobile Apps</div>
+                <div class="project-desc">
+                    Two Android apps: a social media app focused on community interaction, and a taxi tracker app
+                    for live ride tracking and status updates.
+                </div>
+                <div class="tags">
+                    <span class="tag">Android</span>
+                    <span class="tag">Kotlin / Java</span>
+                    <span class="tag">Firebase</span>
+                </div>
+                <div class="buttons">
+                    <a class="btn btn-primary" href="YOUR_MOBILE_APPS_REPO_LINK" target="_blank">
+                        View Repositories
+                    </a>
+                    <a class="btn btn-secondary" href="#" target="_blank">
+                        Screenshots (optional)
+                    </a>
+                </div>
+            </article>
+
         </div>
+    </main>
 
-        <div class="project">
-            <h2>Social Games Web App</h2>
-            <p>A web app for playing social games online. <a href="YOUR_GITHUB_REPO_URL">View on GitHub</a>.</p>
-            <img src="LINK_TO_AN_IMAGE" alt="Social Games Project">
-        </div>
+    <footer>
+        <p>© <span id="year"></span> Your Name – Portfolio</p>
+        <p>
+            GitHub: <a href="https://github.com/YOUR_GITHUB_USERNAME" target="_blank">YOUR_GITHUB_USERNAME</a>
+        </p>
+    </footer>
+</div>
 
-        <!-- Add more project sections in the same way -->
-    </div>
+<script>
+    // Set current year automatically
+    document.getElementById('year').textContent = new Date().getFullYear();
+</script>
 </body>
 </html>
