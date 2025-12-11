@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>My Portfolio</title>
+    <title>Roman's Portfolio</title>
 
     <!-- Google Font -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -40,6 +40,7 @@
                         var(--bg);
             color: var(--text-main);
             padding: 20px;
+            min-height: 100vh;
         }
 
         .page {
@@ -80,7 +81,7 @@
         .section-card {
             background: linear-gradient(145deg, rgba(15, 23, 42, 0.96), rgba(17, 24, 39, 0.98));
             border-radius: 18px;
-            padding: 18px 18px 20px;
+            padding: 24px;
             border: 1px solid var(--card-border);
             box-shadow: 0 18px 40px rgba(15, 23, 42, 0.75);
         }
@@ -101,12 +102,12 @@
         .section-subtitle {
             font-size: 0.9rem;
             color: var(--text-muted);
-            margin-bottom: 10px;
+            margin-bottom: 16px;
         }
 
         .projects-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
             gap: 18px;
         }
 
@@ -114,11 +115,11 @@
             background: radial-gradient(circle at top, rgba(37, 99, 235, 0.22), transparent 55%),
                         var(--card-bg);
             border-radius: 16px;
-            padding: 14px 14px 16px;
+            padding: 20px;
             border: 1px solid rgba(75, 85, 99, 0.9);
             display: flex;
             flex-direction: column;
-            gap: 8px;
+            gap: 12px;
             transition: transform 0.18s ease, box-shadow 0.18s ease, border-color 0.18s ease;
         }
 
@@ -129,18 +130,349 @@
         }
 
         .project-title {
-            font-size: 1rem;
+            font-size: 1.1rem;
             font-weight: 600;
+            color: var(--text-main);
         }
 
         .project-desc {
-            font-size: 0.85rem;
+            font-size: 0.9rem;
             color: #d1d5db;
+            line-height: 1.5;
         }
 
-        .project-meta {
-            font-size: 0.8rem;
+        .project-features {
+            list-style: none;
+            padding: 0;
+            margin: 8px 0;
+        }
+
+        .project-features li {
+            font-size: 0.85rem;
             color: var(--text-muted);
+            margin-bottom: 6px;
+            padding-left: 20px;
+            position: relative;
+        }
+
+        .project-features li:before {
+            content: "•";
+            position: absolute;
+            left: 0;
+            color: var(--accent);
+        }
+
+        .project-link {
+            display: inline-block;
+            margin-top: 8px;
+            padding: 8px 16px;
+            background: var(--accent-soft);
+            border: 1px solid var(--accent);
+            border-radius: 8px;
+            color: var(--accent);
+            text-decoration: none;
+            font-size: 0.85rem;
+            font-weight: 500;
+            transition: all 0.2s ease;
+        }
+
+        .project-link:hover {
+            background: var(--accent);
+            color: white;
+            transform: translateY(-2px);
         }
 
         .tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-top: 8px;
+        }
+
+        .tag {
+            padding: 4px 12px;
+            background: var(--tag-bg);
+            border: 1px solid var(--tag-border);
+            border-radius: 12px;
+            font-size: 0.75rem;
+            color: var(--text-muted);
+        }
+
+        .contact-section {
+            margin-top: 40px;
+        }
+
+        .contact-links {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 16px;
+            margin-top: 16px;
+        }
+
+        .contact-link {
+            color: var(--accent);
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: color 0.2s ease;
+        }
+
+        .contact-link:hover {
+            color: #818cf8;
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="page">
+        <header>
+            <h1>Roman's Portfolio</h1>
+            <h2>Software Developer & Creator</h2>
+            <p class="tagline">Showcasing projects across software development, automation, web, mobile, and trading | Built with Agentic Coding</p>
+        </header>
+
+        <div class="sections">
+            <div class="section-card">
+                <div class="section-title">
+                    <span class="icon">🚀</span>
+                    Featured Projects
+                </div>
+                <div class="section-subtitle">Major projects I've built across different domains using modern technologies and agentic coding</div>
+                
+                <div class="projects-grid">
+                    <div class="project-card">
+                        <div class="project-title">Autonomous Affiliate Marketing Agent</div>
+                        <div class="project-desc">
+                            Production-ready AI-powered automation platform for affiliate marketing. Manages product research, AI content generation, video creation, and multi-platform social media distribution.
+                        </div>
+                        <ul class="project-features">
+                            <li>AI-powered content generation & scheduling</li>
+                            <li>Multi-platform publishing (Facebook, Instagram, YouTube, TikTok)</li>
+                            <li>Video automation with Sora/VEO APIs</li>
+                            <li>Secure OAuth integration & performance tracking</li>
+                        </ul>
+                        <div class="tags">
+                            <span class="tag">Python</span>
+                            <span class="tag">Flask</span>
+                            <span class="tag">AI/ML</span>
+                            <span class="tag">OAuth</span>
+                            <span class="tag">Selenium</span>
+                            <span class="tag">SQLite</span>
+                        </div>
+                    </div>
+
+                    <div class="project-card">
+                        <div class="project-title">HouseGames - Social Games Platform</div>
+                        <div class="project-desc">
+                            A cozy treehouse-themed web platform where friends play social games together. Features 10+ games including Jeopardy, Taboo, Codenames, DrawGuess, and more.
+                        </div>
+                        <ul class="project-features">
+                            <li>10+ multiplayer games (Jeopardy, Taboo, Codenames, etc.)</li>
+                            <li>Anonymous play & profile system</li>
+                            <li>Beautiful treehouse-themed UI</li>
+                            <li>Local storage persistence</li>
+                        </ul>
+                        <div class="tags">
+                            <span class="tag">Next.js 14</span>
+                            <span class="tag">React 18</span>
+                            <span class="tag">TypeScript</span>
+                            <span class="tag">Tailwind CSS</span>
+                            <span class="tag">App Router</span>
+                        </div>
+                    </div>
+
+                    <div class="project-card">
+                        <div class="project-title">Options Trading Bot</div>
+                        <div class="project-desc">
+                            Web-based paper trading bot with AI-powered predictions. Scans stock tickers, provides buy/sell recommendations using TradingView data, and includes neural network price predictions.
+                        </div>
+                        <ul class="project-features">
+                            <li>AI-powered price direction predictions (UP/DOWN)</li>
+                            <li>Technical indicators (RSI, MACD, Bollinger Bands)</li>
+                            <li>Real-time TradingView charts integration</li>
+                            <li>Paper trading with full trade logging</li>
+                        </ul>
+                        <div class="tags">
+                            <span class="tag">FastAPI</span>
+                            <span class="tag">React</span>
+                            <span class="tag">scikit-learn</span>
+                            <span class="tag">yfinance</span>
+                            <span class="tag">SQLite</span>
+                            <span class="tag">Vite</span>
+                        </div>
+                    </div>
+
+                    <div class="project-card">
+                        <div class="project-title">TradingView to Webull Trading Bot</div>
+                        <div class="project-desc">
+                            Automated trading bot that connects TradingView alerts to Webull paper trading accounts. Executes trades automatically based on webhook signals.
+                        </div>
+                        <ul class="project-features">
+                            <li>Webhook integration with TradingView</li>
+                            <li>Automated order execution on Webull</li>
+                            <li>Market, limit, and stop loss orders</li>
+                            <li>Paper trading support</li>
+                        </ul>
+                        <div class="tags">
+                            <span class="tag">Python</span>
+                            <span class="tag">Flask</span>
+                            <span class="tag">Webull API</span>
+                            <span class="tag">Webhooks</span>
+                            <span class="tag">TradingView</span>
+                        </div>
+                    </div>
+
+                    <div class="project-card">
+                        <div class="project-title">Discord Trading Bot</div>
+                        <div class="project-desc">
+                            Sophisticated Discord bot that executes stock trades on Webull by reading natural language messages. Features a beautiful desktop dashboard with real-time monitoring.
+                        </div>
+                        <ul class="project-features">
+                            <li>Natural language message parsing</li>
+                            <li>Beautiful desktop GUI dashboard</li>
+                            <li>Multiple order types (Market, Limit, Stop Loss)</li>
+                            <li>Position tracking & portfolio management</li>
+                            <li>Security controls & user restrictions</li>
+                        </ul>
+                        <div class="tags">
+                            <span class="tag">Python</span>
+                            <span class="tag">Discord.py</span>
+                            <span class="tag">Tkinter</span>
+                            <span class="tag">Webull API</span>
+                            <span class="tag">NLP</span>
+                        </div>
+                    </div>
+
+                    <div class="project-card">
+                        <div class="project-title">PityParty - Voice Chat App</div>
+                        <div class="project-desc">
+                            Real-time voice chat application where users create and join rooms to share stories and connect. Features WebRTC for voice communication and Firebase for signaling.
+                        </div>
+                        <ul class="project-features">
+                            <li>Real-time voice communication (WebRTC)</li>
+                            <li>Room categorization (Anxiety, Depression, Grief, etc.)</li>
+                            <li>Firebase Realtime Database integration</li>
+                            <li>Cross-platform (Android, iOS, Web)</li>
+                            <li>Anonymous authentication</li>
+                        </ul>
+                        <div class="tags">
+                            <span class="tag">React Native</span>
+                            <span class="tag">Expo</span>
+                            <span class="tag">WebRTC</span>
+                            <span class="tag">Firebase</span>
+                            <span class="tag">Agora SDK</span>
+                        </div>
+                    </div>
+
+                    <div class="project-card">
+                        <div class="project-title">Uber Networking App</div>
+                        <div class="project-desc">
+                            Modern web application connecting people going to the same events (concerts, conferences, sports) so they can share rides and network together.
+                        </div>
+                        <ul class="project-features">
+                            <li>Event discovery & smart matching</li>
+                            <li>Ride sharing coordination</li>
+                            <li>User profiles with ratings</li>
+                            <li>Match management system</li>
+                        </ul>
+                        <div class="tags">
+                            <span class="tag">React 18</span>
+                            <span class="tag">TypeScript</span>
+                            <span class="tag">Vite</span>
+                            <span class="tag">Tailwind CSS</span>
+                            <span class="tag">React Router</span>
+                        </div>
+                    </div>
+
+                    <div class="project-card">
+                        <div class="project-title">Neon Maze Game</div>
+                        <div class="project-desc">
+                            Retro-style HTML5 canvas game featuring a neon-themed maze with death tracking, timer, and immersive cyberpunk aesthetics.
+                        </div>
+                        <ul class="project-features">
+                            <li>HTML5 Canvas game engine</li>
+                            <li>Neon cyberpunk aesthetic</li>
+                            <li>Death tracking & timer system</li>
+                            <li>Responsive game mechanics</li>
+                        </ul>
+                        <div class="tags">
+                            <span class="tag">HTML5</span>
+                            <span class="tag">Canvas API</span>
+                            <span class="tag">JavaScript</span>
+                            <span class="tag">CSS3</span>
+                        </div>
+                    </div>
+
+                    <div class="project-card">
+                        <div class="project-title">Calculator Application</div>
+                        <div class="project-desc">
+                            Feature-rich calculator with graphical user interface. Includes basic arithmetic, advanced operations (square root, percentage, inverse), and memory functions.
+                        </div>
+                        <ul class="project-features">
+                            <li>Basic & advanced arithmetic operations</li>
+                            <li>Memory functions (clear, backspace, etc.)</li>
+                            <li>Modern GUI with Tkinter</li>
+                            <li>Comprehensive error handling</li>
+                        </ul>
+                        <div class="tags">
+                            <span class="tag">Python</span>
+                            <span class="tag">Tkinter</span>
+                            <span class="tag">GUI</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section-card">
+                <div class="section-title">
+                    <span class="icon">🛠️</span>
+                    Tech Stack
+                </div>
+                <div class="section-subtitle">Technologies and tools I've used across my projects</div>
+                <div class="tags" style="margin-top: 12px;">
+                    <span class="tag">Python</span>
+                    <span class="tag">JavaScript</span>
+                    <span class="tag">TypeScript</span>
+                    <span class="tag">React</span>
+                    <span class="tag">React Native</span>
+                    <span class="tag">Next.js</span>
+                    <span class="tag">Node.js</span>
+                    <span class="tag">FastAPI</span>
+                    <span class="tag">Flask</span>
+                    <span class="tag">Firebase</span>
+                    <span class="tag">SQLite</span>
+                    <span class="tag">WebRTC</span>
+                    <span class="tag">WebSockets</span>
+                    <span class="tag">Tailwind CSS</span>
+                    <span class="tag">Vite</span>
+                    <span class="tag">Expo</span>
+                    <span class="tag">Selenium</span>
+                    <span class="tag">scikit-learn</span>
+                    <span class="tag">Tkinter</span>
+                    <span class="tag">OAuth</span>
+                    <span class="tag">REST APIs</span>
+                    <span class="tag">Webhooks</span>
+                    <span class="tag">TradingView API</span>
+                    <span class="tag">Webull API</span>
+                    <span class="tag">Discord.py</span>
+                    <span class="tag">HTML5 Canvas</span>
+                    <span class="tag">GitHub Pages</span>
+                    <span class="tag">Agentic Coding</span>
+                </div>
+            </div>
+
+            <div class="section-card contact-section">
+                <div class="section-title">
+                    <span class="icon">📬</span>
+                    Contact
+                </div>
+                <div class="section-subtitle">Let's connect!</div>
+                <div class="contact-links">
+                    <a href="mailto:your-email@example.com" class="contact-link">📧 Email</a>
+                    <a href="https://linkedin.com/in/your-profile" class="contact-link" target="_blank">💼 LinkedIn</a>
+                    <a href="https://github.com/Testy911cody" class="contact-link" target="_blank">🐙 GitHub</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
